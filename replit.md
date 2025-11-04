@@ -5,12 +5,11 @@ A personal romantic website created for Alena featuring a dark theme with glowin
 
 ## Recent Changes
 - **November 4, 2025**: Updated with new features
-  - Added interactive "Do You Love Me?" popup that appears on first visit
+  - Added interactive "Do You Love Me?" popup that appears on every page load
   - Popup has playful behavior: entire box moves to random position when hovering/clicking "No"
   - Updated to elegant royal fonts: Playfair Display (main) and Cormorant Garamond (serif)
   - Gallery updated with 4 real photos from attached assets
   - Removed password hint from gallery login for cleaner UI
-  - All changes use localStorage to remember popup dismissal
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
@@ -40,7 +39,7 @@ Preferred communication style: Simple, everyday language.
 **Custom Components**:
 - `Particles.tsx`: Canvas-based floating pink particle animation system
 - `Navigation.tsx`: Fixed top navigation with active state indicators
-- `LovePopup.tsx`: Interactive "Do You Love Me?" popup with playful moving behavior - entire box relocates when user tries to click "No", with confetti effects on "Yes" and localStorage persistence
+- `LovePopup.tsx`: Interactive "Do You Love Me?" popup that shows on every page load - entire box relocates to random position when user tries to hover/click "No", with confetti effects on "Yes"
 
 ### Backend Architecture
 **Framework**: Express.js with TypeScript

@@ -9,10 +9,7 @@ export function LovePopup() {
   const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
-    const hasSeenPopup = localStorage.getItem("hasSeenLovePopup");
-    if (!hasSeenPopup) {
-      setTimeout(() => setIsOpen(true), 500);
-    }
+    setTimeout(() => setIsOpen(true), 500);
   }, []);
 
   const movePopup = () => {
@@ -30,7 +27,6 @@ export function LovePopup() {
     setShowConfetti(true);
     setTimeout(() => {
       setIsOpen(false);
-      localStorage.setItem("hasSeenLovePopup", "true");
     }, 1500);
   };
 
