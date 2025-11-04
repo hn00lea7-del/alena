@@ -12,28 +12,23 @@ import type { GalleryPhoto } from "@shared/schema";
 const photos: GalleryPhoto[] = [
   {
     id: 1,
-    imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop",
+    imageUrl: "/Untitled Project (3)_1762279320965.jpg",
     caption: "Mommy tercantiiiik, I can't stop looking at you"
   },
   {
     id: 2,
-    imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=500&fit=crop",
+    imageUrl: "/Untitled Project (2)_1762279320966.jpg",
     caption: "Just marry me already cutie"
   },
   {
     id: 3,
-    imageUrl: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=500&fit=crop",
+    imageUrl: "/photo_6075891952651017841_y_1762279320967.jpg",
     caption: "You're so adorable, I'm melting"
   },
   {
     id: 4,
-    imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop",
+    imageUrl: "/Untitled Project (1)_1762279320968.jpg",
     caption: "My sweet girl, always and forever"
-  },
-  {
-    id: 5,
-    imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=500&fit=crop",
-    caption: "Can't wait to see you mommy"
   },
 ];
 
@@ -144,10 +139,6 @@ export default function Gallery() {
                 {verifyPasswordMutation.isPending ? "Checking..." : "Unlock Gallery"}
               </Button>
             </form>
-
-            <p className="text-center text-sm text-foreground/50 mt-6 italic">
-              Hint: You know what to call me
-            </p>
           </Card>
         </div>
       </div>

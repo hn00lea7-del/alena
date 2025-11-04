@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
+import { LovePopup } from "@/components/LovePopup";
 import Home from "@/pages/Home";
 import OurStory from "@/pages/OurStory";
 import Gallery from "@/pages/Gallery";
@@ -27,6 +28,7 @@ function App() {
         <div className="min-h-screen bg-background text-foreground">
           <Navigation />
           <Router />
+          <LovePopup />
         </div>
         <Toaster />
       </TooltipProvider>
