@@ -1,7 +1,16 @@
 # Romantic Website for Alena
 
 ## Overview
-A personal romantic website created for Alena featuring a dark theme with glowing pink aesthetics. The site includes three main sections: a romantic home page, a story timeline, and a password-protected photo gallery. All content is written in natural Indonesian language to create an intimate, personal experience. The design emphasizes emotional connection through floating particle animations, soft glows, and thoughtful typography.
+A personal romantic website created for Alena featuring a dark theme with glowing pink aesthetics. The site includes three main sections: a romantic home page, a story timeline, and a password-protected photo gallery. All content is written in natural Indonesian language to create an intimate, personal experience. The design emphasizes emotional connection through floating particle animations, soft glows, and elegant royal typography.
+
+## Recent Changes
+- **November 4, 2025**: Updated with new features
+  - Added interactive "Do You Love Me?" popup that appears on first visit
+  - Popup has playful behavior: entire box moves to random position when hovering/clicking "No"
+  - Updated to elegant royal fonts: Playfair Display (main) and Cormorant Garamond (serif)
+  - Gallery updated with 4 real photos from attached assets
+  - Removed password hint from gallery login for cleaner UI
+  - All changes use localStorage to remember popup dismissal
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
@@ -17,8 +26,8 @@ Preferred communication style: Simple, everyday language.
 
 **Design System**:
 - **Color Scheme**: Dark background with glowing pink accents (HSL 330, 85%, 42% primary)
-- **Typography**: Poppins for body text, Pacifico for romantic headings
-- **Animation**: Custom canvas-based particle system, CSS hover/active elevation effects
+- **Typography**: Playfair Display for elegant body text, Cormorant Garamond for serif, Pacifico for romantic headings
+- **Animation**: Custom canvas-based particle system, CSS hover/active elevation effects, moving popup
 - **Theme**: Dark mode only with pink glow shadows and HSLA-based effects
 - **Component Pattern**: Shared UI components from Shadcn with custom romantic styling
 
@@ -31,7 +40,7 @@ Preferred communication style: Simple, everyday language.
 **Custom Components**:
 - `Particles.tsx`: Canvas-based floating pink particle animation system
 - `Navigation.tsx`: Fixed top navigation with active state indicators
-- `LovePopup.tsx`: Interactive popup with confetti effects and localStorage persistence
+- `LovePopup.tsx`: Interactive "Do You Love Me?" popup with playful moving behavior - entire box relocates when user tries to click "No", with confetti effects on "Yes" and localStorage persistence
 
 ### Backend Architecture
 **Framework**: Express.js with TypeScript

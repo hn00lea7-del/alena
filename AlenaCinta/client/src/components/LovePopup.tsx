@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function LovePopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
+  const [popupPosition, setPopupPosition] = useState<{ x: number; y: number } | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
@@ -15,14 +15,15 @@ export function LovePopup() {
     }
   }, []);
 
-  const moveNoButton = () => {
-    const maxX = window.innerWidth - 200;
-    const maxY = window.innerHeight - 100;
+  const movePopup = () => {
+    const padding = 50;
+    const maxX = window.innerWidth - 500;
+    const maxY = window.innerHeight - 400;
     
-    const newX = Math.random() * maxX;
-    const newY = Math.random() * maxY;
+    const newX = padding + Math.random() * (maxX - padding);
+    const newY = padding + Math.random() * (maxY - padding);
     
-    setNoButtonPosition({ x: newX, y: newY });
+    setPopupPosition({ x: newX, y: newY });
   };
 
   const handleYes = () => {
@@ -36,7 +37,7 @@ export function LovePopup() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-md">
+    <div className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-md">
       {showConfetti && (
         <div className="absolute inset-0 pointer-events-none">
           {[...Array(30)].map((_, i) => (
@@ -55,9 +56,13 @@ export function LovePopup() {
       )}
 
       <Card
-        className="relative p-8 md:p-12 bg-card/90 backdrop-blur-sm border-primary/40 max-w-md mx-4"
+        className="absolute p-8 md:p-12 bg-card/90 backdrop-blur-sm border-primary/40 w-full max-w-md"
         style={{
           boxShadow: "0 0 60px rgba(236, 72, 153, 0.4)",
+          left: popupPosition ? `${popupPosition.x}px` : '50%',
+          top: popupPosition ? `${popupPosition.y}px` : '50%',
+          transform: popupPosition ? 'none' : 'translate(-50%, -50%)',
+          transition: 'all 0.3s ease-out',
         }}
       >
         <div className="text-center mb-8">
@@ -81,7 +86,7 @@ export function LovePopup() {
           </p>
         </div>
 
-        <div className="flex gap-4 justify-center relative">
+        <div className="flex gap-4 justify-center">
           <Button
             onClick={handleYes}
             size="lg"
@@ -97,16 +102,12 @@ export function LovePopup() {
           <Button
             variant="outline"
             size="lg"
-            className="text-lg px-8 py-6 border-primary/40 absolute"
+            className="text-lg px-8 py-6 border-primary/40"
             style={{
-              left: noButtonPosition.x ? `${noButtonPosition.x}px` : 'auto',
-              top: noButtonPosition.y ? `${noButtonPosition.y}px` : 'auto',
-              position: noButtonPosition.x ? 'fixed' : 'relative',
-              transition: 'all 0.3s ease-out',
               boxShadow: "0 0 20px rgba(236, 72, 153, 0.2)",
             }}
-            onMouseEnter={moveNoButton}
-            onClick={moveNoButton}
+            onMouseEnter={movePopup}
+            onClick={movePopup}
           >
             No
           </Button>
