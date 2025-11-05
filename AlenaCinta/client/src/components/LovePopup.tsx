@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export function LovePopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [popupPosition, setPopupPosition] = useState<{ x: number; y: number } | null>(null);
+  const [popupPosition, setPopupPosition] = useState<{
+    x: number;
+    y: number;
+  } | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
 
   useEffect(() => {
@@ -16,10 +19,10 @@ export function LovePopup() {
     const padding = 50;
     const maxX = window.innerWidth - 500;
     const maxY = window.innerHeight - 400;
-    
+
     const newX = padding + Math.random() * (maxX - padding);
     const newY = padding + Math.random() * (maxY - padding);
-    
+
     setPopupPosition({ x: newX, y: newY });
   };
 
@@ -55,16 +58,14 @@ export function LovePopup() {
         className="absolute p-8 md:p-12 bg-card/90 backdrop-blur-sm border-primary/40 w-full max-w-md"
         style={{
           boxShadow: "0 0 60px rgba(236, 72, 153, 0.4)",
-          left: popupPosition ? `${popupPosition.x}px` : '50%',
-          top: popupPosition ? `${popupPosition.y}px` : '50%',
-          transform: popupPosition ? 'none' : 'translate(-50%, -50%)',
-          transition: 'all 0.3s ease-out',
+          left: popupPosition ? `${popupPosition.x}px` : "50%",
+          top: popupPosition ? `${popupPosition.y}px` : "50%",
+          transform: popupPosition ? "none" : "translate(-50%, -50%)",
+          transition: "all 0.3s ease-out",
         }}
       >
         <div className="text-center mb-8">
-          <div
-            className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/40 animate-glow-pulse"
-          >
+          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/40 animate-glow-pulse">
             <Heart className="w-12 h-12 text-primary fill-current" />
           </div>
 
@@ -77,9 +78,7 @@ export function LovePopup() {
             Do You Love Me?
           </h2>
 
-          <p className="text-foreground/80 text-lg">
-            Be honest mommy... 💕
-          </p>
+          <p className="text-foreground/80 text-lg">Be honest... 💕</p>
         </div>
 
         <div className="flex gap-4 justify-center">
@@ -105,7 +104,7 @@ export function LovePopup() {
             onMouseEnter={movePopup}
             onClick={movePopup}
           >
-            No
+            tidak😒
           </Button>
         </div>
 

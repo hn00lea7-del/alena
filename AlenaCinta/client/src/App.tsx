@@ -8,6 +8,7 @@ import { LovePopup } from "@/components/LovePopup";
 import Home from "@/pages/Home";
 import OurStory from "@/pages/OurStory";
 import Gallery from "@/pages/Gallery";
+import Mood from "@/pages/Mood";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/cerita-kita" component={OurStory} />
       <Route path="/galeri" component={Gallery} />
+      <Route path="/mood" component={Mood} />
       <Route component={NotFound} />
     </Switch>
   );

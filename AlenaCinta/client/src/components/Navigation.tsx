@@ -8,6 +8,7 @@ export function Navigation() {
     { path: "/", label: "Beranda" },
     { path: "/cerita-kita", label: "Cerita Kita" },
     { path: "/galeri", label: "Galeri" },
+    { path: "/mood", label: "Mood" },
   ];
 
   return (

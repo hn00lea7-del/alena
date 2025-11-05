@@ -167,26 +167,26 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="space-y-6 md:space-y-8 max-w-4xl mx-auto">
             {photos.map((photo) => (
               <Card
                 key={photo.id}
-                className="group overflow-hidden bg-card/40 backdrop-blur-sm border-primary/20 hover-elevate cursor-pointer transition-all"
+                className="group overflow-hidden bg-card/40 backdrop-blur-sm border-primary/20 hover-elevate cursor-pointer transition-all w-full"
                 style={{
                   boxShadow: "0 0 30px rgba(236, 72, 153, 0.1)",
                 }}
                 onClick={() => setSelectedPhoto(photo)}
                 data-testid={`card-photo-${photo.id}`}
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative w-full overflow-hidden">
                   <img
                     src={photo.imageUrl}
                     alt={`Photo ${photo.id}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-auto max-h-[70vh] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <p className="text-foreground text-center font-medium text-lg leading-relaxed">
+                      <p className="text-foreground text-center font-medium text-lg md:text-xl leading-relaxed">
                         {photo.caption}
                       </p>
                     </div>
